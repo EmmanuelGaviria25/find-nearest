@@ -5,6 +5,8 @@ import { loadCities } from "./utils/cityDataLoader";
 import { calculateDistance } from "./services/distanceCalculator";
 import CitySearch from "./components/CitySearch";
 import CityList from "./components/CityList";
+import Logo from './shared/Logo';
+import Footer from "./shared/Footer";
 
 const App: React.FC = () => {
   const [cities, setCities] = useState<City[]>([]);
@@ -66,7 +68,8 @@ const App: React.FC = () => {
 
   return (
     <div className="app-container">
-      <h1>Find Nearest Cities</h1>
+      <Logo />
+      <h1>Find Nearest App</h1>
 
       {loading ? (
         <p>Loading cities...</p>
@@ -81,6 +84,7 @@ const App: React.FC = () => {
           <CityList cities={nearestCities} />
         </>
       )}
+      <Footer />
     </div>
   );
 };
